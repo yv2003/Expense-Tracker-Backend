@@ -6,7 +6,7 @@ const app = express()
 
 require('dotenv').config()
 
-// const PORT = process.env.PORT
+const PORT = process.env.PORT
 
 //middlewares
 app.use(express.json())
@@ -17,7 +17,7 @@ readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + 
 
 const server = () => {
     db()
-    app.listen(3000,() => {
+    app.listen(PORT,() => {
         console.log('listening to port:')
     })
 }
